@@ -138,12 +138,8 @@ h1 em, h2 em { color: var(--gold); font-weight: 500; }
 .dark-section { color: var(--cream); background: var(--green); }
 
 /* Brand */
-.brand { display: inline-flex; align-items: center; gap: .65rem; flex: 0 0 auto; }
-.brand-mark { width: 34px; height: 34px; overflow: visible; }
-.brand-type { display: flex; flex-direction: column; align-items: center; font-family: "Cormorant Garamond", serif; line-height: 1; transition: color 200ms var(--ease-out); }
-.brand-type > span { font-size: 1.12rem; letter-spacing: .17em; }
-.brand-type small { display: flex; align-items: center; gap: .45rem; margin-top: .34rem; font: 500 .49rem/1 "Montserrat", sans-serif; letter-spacing: .45em; }
-.brand-type i { display: block; width: 17px; height: 1px; background: var(--gold); }
+.brand { display: inline-flex; align-items: center; flex: 0 0 auto; }
+.brand-logo { width: 205px; height: auto; object-fit: contain; }
 
 /* Header */
 .site-header { position: fixed; inset: 0 0 auto; z-index: 1000; height: 86px; color: var(--cream); transition: background 220ms var(--ease-out), color 220ms var(--ease-out), box-shadow 220ms var(--ease-out); }
@@ -197,13 +193,9 @@ h1 em, h2 em { color: var(--gold); font-weight: 500; }
 .home-hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 58% center; transform: scale(1.02); }
 .home-hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4,34,29,.96) 0%, rgba(4,34,29,.82) 37%, rgba(4,34,29,.25) 68%, rgba(4,34,29,.18) 100%), linear-gradient(0deg, rgba(4,34,29,.42), transparent 45%); }
 .hero-field-lines { left: -7%; bottom: -12%; opacity: .55; }
-.hero-rail { position: absolute; z-index: 2; left: clamp(.6rem, 1.5vw, 1.8rem); top: 125px; bottom: 46px; display: flex; flex-direction: column; align-items: center; color: rgba(242,239,231,.55); font-size: .52rem; letter-spacing: .22em; writing-mode: vertical-rl; }
-.hero-rail i { flex: 1; width: 1px; margin: 1.1rem 0; background: rgba(242,239,231,.24); }
 .home-hero-inner { position: relative; z-index: 2; display: grid; align-items: end; grid-template-columns: minmax(0, 790px) 1fr; gap: 4rem; padding-top: 140px; padding-bottom: 90px; }
 .home-hero-copy h1 { margin-bottom: 1.8rem; max-width: 850px; font-size: clamp(3.8rem, 6.3vw, 7rem); }
-.home-hero-copy > p { max-width: 650px; margin-bottom: 2.2rem; color: rgba(242,239,231,.76); font-size: clamp(.92rem, 1.2vw, 1.08rem); line-height: 1.85; }
-.hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
-.text-link-light { padding: .5rem 0; color: var(--cream); border-bottom: 1px solid rgba(242,239,231,.32); font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.home-hero-copy > p { max-width: 650px; margin-bottom: 0; color: rgba(242,239,231,.76); font-size: clamp(.92rem, 1.2vw, 1.08rem); line-height: 1.85; }
 .hero-meta { align-self: end; justify-self: end; display: flex; gap: .65rem; flex-direction: column; align-items: flex-end; color: rgba(242,239,231,.55); font-size: .57rem; letter-spacing: .13em; text-transform: uppercase; }
 .scroll-cue { position: absolute; z-index: 3; right: clamp(1.2rem, 3vw, 3.6rem); bottom: 2rem; width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid rgba(242,239,231,.45); border-radius: 50%; }
 
@@ -558,16 +550,13 @@ h1 em, h2 em { color: var(--gold); font-weight: 500; }
 @media (max-width: 820px) {
   body { font-size: 15px; }
   .site-header { height: 74px; }
-  .brand-mark { width: 31px; height: 31px; }
-  .brand-type > span { font-size: 1rem; }
-  .brand-type small { font-size: .44rem; }
+  .brand-logo { width: 176px; }
   .home-hero { min-height: 780px; align-items: flex-end; }
   .home-hero-image { object-position: 66% center; }
   .home-hero-shade { background: linear-gradient(0deg, rgba(4,34,29,.97) 0%, rgba(4,34,29,.75) 60%, rgba(4,34,29,.25) 100%); }
-  .hero-rail, .scroll-cue { display: none; }
+  .scroll-cue { display: none; }
   .home-hero-inner { padding-top: 130px; padding-bottom: 4rem; }
   .home-hero-copy h1 { font-size: clamp(3.2rem, 14.5vw, 5.2rem); }
-  .hero-actions { align-items: flex-start; flex-direction: column; }
   .context-grid, .video-shell, .letter-grid, .rafael-grid, .closing-inner, .editorial-grid, .definition-grid, .faq-grid, .process-intro-grid, .responsibility-grid, .rafael-profile-grid, .contact-page-grid, .legal-layout { grid-template-columns: 1fr; gap: 3rem; }
   .context-intro, .contact-page aside { position: static; }
   .context-statement { font-size: 2.8rem; }

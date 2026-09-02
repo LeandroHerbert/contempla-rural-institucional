@@ -69,11 +69,6 @@ export default function Home() {
         />
         <div className="home-hero-shade" />
         <FieldLines className="hero-field-lines" />
-        <div className="hero-rail" aria-hidden="true">
-          <span>CONTEMPLA RURAL</span>
-          <i />
-          <span>01 / 07</span>
-        </div>
         <div className="container home-hero-inner">
           <div className="home-hero-copy reveal-up">
             <Eyebrow light>Aquisição e patrimônio rural</Eyebrow>
@@ -83,14 +78,6 @@ export default function Home() {
             <p>
               A Contempla Rural analisa a aquisição, o prazo da negociação, o capital disponível e as condições conhecidas para avaliar estruturas compatíveis com o imóvel pretendido.
             </p>
-            <div className="hero-actions">
-              <Link href="/contempla-rural" className="button button-gold">
-                Conheça nossa atuação <ArrowUpRight size={17} aria-hidden="true" />
-              </Link>
-              <Link href="/contato" className="text-link-light">
-                Apresentar uma aquisição <span aria-hidden="true">↗</span>
-              </Link>
-            </div>
           </div>
           <div className="hero-meta" aria-hidden="true">
             <span>Horizonte rural</span>
@@ -259,7 +246,6 @@ export default function Home() {
         <div className="container closing-inner">
           <Logo light />
           <div>
-            <Eyebrow light>Uma conversa com contexto</Eyebrow>
             <h2>Você possui uma aquisição rural em análise?</h2>
             <p>
               Apresente o imóvel, o valor pretendido e o estágio da negociação. A leitura inicial indicará se há elementos suficientes para avançar.

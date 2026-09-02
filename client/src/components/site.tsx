@@ -8,21 +8,15 @@ const DEFAULT_DESCRIPTION =
   "Cartas contempladas aplicadas à aquisição e expansão de patrimônio rural, com leitura do imóvel, prazo, capital e condições da operação.";
 
 export function Logo({ light = false }: { light?: boolean }) {
-  const ink = light ? "#F2EFE7" : "#083D34";
-  const gold = "#B8A67A";
   return (
     <Link href="/" className="brand" aria-label="Contempla Rural — início">
-      <svg className="brand-mark" viewBox="0 0 72 72" aria-hidden="true">
-        <circle cx="36" cy="36" r="31" fill="none" stroke={gold} strokeWidth="1.5" />
-        <path d="M12 43c10-11 20-17 33-20" fill="none" stroke={gold} strokeWidth="3" strokeLinecap="round" />
-        <path d="M15 49c12-9 23-13 42-13" fill="none" stroke={gold} strokeWidth="3" strokeLinecap="round" />
-        <path d="M21 56c10-6 21-8 38-7" fill="none" stroke={gold} strokeWidth="3" strokeLinecap="round" />
-        <path d="M36 8v18M47 10l-6 17M57 17 46 30M63 28l-15 7" fill="none" stroke={gold} strokeWidth="3" strokeLinecap="round" />
-      </svg>
-      <span className="brand-type" style={{ color: ink }}>
-        <span>CONTEMPLA</span>
-        <small><i /> RURAL <i /></small>
-      </span>
+      <img
+        className="brand-logo"
+        src={light ? ASSETS.logoLight : ASSETS.logoGreen}
+        alt="Contempla Rural"
+        width="331"
+        height="68"
+      />
     </Link>
   );
 }

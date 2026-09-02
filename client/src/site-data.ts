@@ -1,4 +1,6 @@
 export const ASSETS = {
+  logoLight: "/manus-storage/logo-oficial-extraida_42b1f983.png",
+  logoGreen: "/manus-storage/logo-oficial-verde_9844c032.png",
   hero: "/manus-storage/hero-fazenda_99b43c02.jpg",
   road: "/manus-storage/caminho-rural_16002f76.jpg",
   operation: "/manus-storage/mapa-operacao_7f39cbd9.jpg",
