@@ -1,35 +1,59 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
+const loadPage = (name: keyof typeof import("./pages/InstitutionalPages")) =>
+  lazy(() => import("./pages/InstitutionalPages").then((module) => ({ default: module[name] })));
 
-function Router() {
+const AboutPage = loadPage("AboutPage");
+const LetterPage = loadPage("LetterPage");
+const ProcessPage = loadPage("ProcessPage");
+const RafaelPage = loadPage("RafaelPage");
+const ContentPage = loadPage("ContentPage");
+const ArticlePage = loadPage("ArticlePage");
+const ContactPage = loadPage("ContactPage");
+const PrivacyPage = loadPage("PrivacyPage");
+const TermsPage = loadPage("TermsPage");
+
+function PageLoader() {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <div className="route-loader" role="status" aria-live="polite">
+      <span />
+      <small>Organizando o conteúdo</small>
+    </div>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
+function Router() {
+  return (
+    <Suspense fallback={<PageLoader />}>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/contempla-rural" component={AboutPage} />
+        <Route path="/carta-contemplada-rural" component={LetterPage} />
+        <Route path="/como-atuamos" component={ProcessPage} />
+        <Route path="/rafael-gois" component={RafaelPage} />
+        <Route path="/conteudos" component={ContentPage} />
+        <Route path="/conteudos/:slug" component={ArticlePage} />
+        <Route path="/contato" component={ContactPage} />
+        <Route path="/privacidade" component={PrivacyPage} />
+        <Route path="/termos" component={TermsPage} />
+        <Route path="/404" component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
+    </Suspense>
+  );
+}
 
-function App() {
+export default function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
           <Router />
@@ -38,5 +62,3 @@ function App() {
     </ErrorBoundary>
   );
 }
-
-export default App;

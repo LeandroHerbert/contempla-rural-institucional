@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# O sitemap será associado ao domínio definitivo na publicação oficial.
